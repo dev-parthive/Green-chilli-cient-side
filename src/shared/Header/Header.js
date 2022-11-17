@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Header.css'
 const Header = () => {
     const menuItems = <>
         <li className='font-semibold'><Link to="/">Home</Link></li>
@@ -19,7 +19,7 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <a href='d' className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a href='d' className="btn btn-ghost normal-case text-xl"><Link to="/"><span className='text-2xl text-orange-400' >Green Chilli</span></Link></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
@@ -27,7 +27,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a href='d' className="btn">Get started</a>
+          <a href='d' className="btn"> user</a>
         </div>
       </div>
     );

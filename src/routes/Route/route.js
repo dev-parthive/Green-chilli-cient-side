@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Blog from "../../pages/Blog/Blog";
+import Error from "../../pages/Error/Error";
 import Home from "../../pages/Home/Home";
 
 const routes = createBrowserRouter([
@@ -14,7 +15,7 @@ const routes = createBrowserRouter([
             } , 
             {
                 path: '*', 
-                element: <h2 className="text-4xl">Tumi tow vul route a chole asco</h2> 
+                element: <Error></Error>
             },
             {
                 path: '/blog',
