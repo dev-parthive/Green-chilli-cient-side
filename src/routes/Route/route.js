@@ -13,6 +13,10 @@ const routes = createBrowserRouter([
                 element: <Home></Home>
             } , 
             {
+                path: '*', 
+                element: <h2 className="text-4xl">Tumi tow vul route a chole asco</h2> 
+            },
+            {
                 path: '/blog',
                 element: <Blog></Blog>
             }
