@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import routes from './routes/Route/route';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div className="App">
-    
-    </div>
+    <>
+    <RouterProvider router={routes}></RouterProvider>
+    <ToastContainer></ToastContainer>
+    </>
   );
 }
 
