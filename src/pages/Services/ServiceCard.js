@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ServiceCard = ({product}) => {
-    const {img, description, rating, price, name} = product
+    const {img, description, rating, price, name} = product 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
@@ -16,7 +17,7 @@ const ServiceCard = ({product}) => {
             <div className='flex justify-between items-center'><p className='mr-1'>{rating}</p> <p><FaStar style={{color:'goldenrod'}}></FaStar></p><p><FaStar style={{color:'goldenrod'}}></FaStar></p><p><FaStar style={{color:'goldenrod'}}></FaStar></p><p><FaStar style={{color:'goldenrod'}}></FaStar></p><p><FaStarHalfAlt style={{color:'goldenrod'}}></FaStarHalfAlt></p></div>
           </div>
           <div className="card-actions">
-            <button className="btn btn-primary">Details</button>
+          <Link to={`/service/${product._id}`}><button className="btn btn-primary" >Details</button></Link>
           </div>
         </div>
       </div>

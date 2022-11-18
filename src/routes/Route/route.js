@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Blog from "../../pages/Blog/Blog";
 import Error from "../../pages/Error/Error";
 import Home from "../../pages/Home/Home";
+import ProductDetails from "../../pages/Home/ProductDetails";
 import Register from "../../pages/Register/Register";
 import Services from "../../pages/Services/Services";
 
@@ -33,7 +34,11 @@ const routes = createBrowserRouter([
                 loader: ()=>{
                     return fetch('http://localhost:5000/services')
                 } 
+            } ,{
+                path: "/service/:id",
+                element: <ProductDetails></ProductDetails>
             }
+           
         ]
     }
 ])
