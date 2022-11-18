@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import img1 from '../../assests/images/pexels-igor-starkov-1307698.jpg'
 import GridGallery from './GridGallery';
 import './Home.css'
+import Payment from './Payment';
 import ProductCard from './ProductCard';
 const Home = () => {
      const [products, setProducts] = useState([])
@@ -38,6 +39,7 @@ const Home = () => {
                     <p className='text-2xl'>What kind of dish we have</p>
                 </div>
             <GridGallery></GridGallery>
+            <Payment></Payment>
           
         </div>
     );
