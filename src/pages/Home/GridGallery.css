@@ -8,6 +8,7 @@
     width: 400px ;
     height: 350px;
     cursor: pointer;
+    border-radius: 8px;
 }
 .img-gallaery{
     width:  80%;

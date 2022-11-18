@@ -37,6 +37,10 @@ const routes = createBrowserRouter([
             } ,{
                 path: "/service/:id",
                 element: <ProductDetails></ProductDetails>
+            } , 
+            {
+                path: "/register",
+                element: <Register></Register>
             }
            
         ]

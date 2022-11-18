@@ -19,7 +19,7 @@ const Header = () => {
               {menuItems}
             </ul>
           </div>
-          <Link to="/"><span className='text-2xl text-orange-400' >Green Chilli</span></Link>
+          <Link to="/"><span className='text-2xl text-orange-400 btn btn-ghost' >Green Chilli</span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
