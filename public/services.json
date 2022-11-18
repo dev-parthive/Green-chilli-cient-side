@@ -1,6 +1,44 @@
 [
     {
-        "name"  : "Sharma", 
-        "img" : ""
-    }
+        "name"  : "Chicken Shawarma", 
+        "img" : "https://i.ibb.co/jr7LpC3/pexels-mouktik-joshi-9646845.jpg", 
+        "rating": "4.2", 
+        "price" : "20" ,
+        "description": "This Chicken Shawarma recipe is going to knock your socks off! Just a handful of every day spices makes an incredible Chicken Shawarma marinade that infuses the chicken with exotic Middle Eastern flavours. The smell when this is cooking is insane!This is a reader-favourite recipe included by popular demand in my debut cookbook"
+    } , 
+    {
+        "name": "Pizza", 
+        "img": "https://i.ibb.co/BfZjs4J/pexels-kristina-paukshtite-1146760.jpg",
+        "rating": "4.9",
+        "price" : "50" ,
+        "description": "All you need to prepare the simplest Pizza at home is all-purpose flour, dry yeast, warm water, onion, tomato, capsicum, and different kinds of cheese along with tomato ketchup. Here, in this Italian recipe, we have used mushrooms as well, which is a subjective choice"
+    } , 
+    {
+        "name": "Chicken Biryani", 
+        "img": "https://i.ibb.co/9YLGVNT/pexels-meruyert-gonullu-7469289.jpg", 
+        "rating": "3.0", 
+        "price" : "50",
+        "description" : "RECIPE  PIN ITChicken Biryani is a delciious savory rice dish loaded with spicy marinated chicken, caramelized onions, and flavorful saffron rice.BEST CHICKEN BIRYANIChicken Biryani is a savory chicken and rice dish that includes layers of chicken, rice, and aromatics that are steamed together. The bottom layer of rice absorbs all the chicken juices as it cooks, giving it a tender texture and rich flavor, while the top layer of rice turns out white and fluffy. Buried in the Biryani, you’ll find whole cuts of succulent chicken bursting with flavor from the potent array of spices, herbs, and aromatics it’s marinated in."
+    } , 
+    {
+        "name": "Shawarma roll", 
+        "img": "https://i.ibb.co/qCYDh0s/pexels-cottonbro-studio-4877838.jpg", 
+        "rating" : "4.5", 
+        "price" : "15" , 
+        "description" :  "Chicken Boneless Thighs, onions, tomatoes, cucumbers, spices, and various sauces make a Chicken Shawarma Roll. These ingredients are combined and being placed on a pita bread that is then rolled. Before being added to the roll, the chicken is marinated with some local spices and olive oil and grilled."
+    }, 
+    {
+        "name" : "Burger",  
+        "img" : "https://i.ibb.co/M7M2Kwm/pexels-rajesh-tp-1633578.jpg", 
+        "rating" :"3.8", 
+        "price" : "20" , 
+        "description" : "Do homemade burgers need eggs? No, homemade burgers don't need eggs to bind them. Other ground beef recipes like these low carb meatballs need eggs to help bind the ingredients because they have additional dry ingredients like bread crumbs and onions. Using this recipe to make beef burgers does not require any eggs."
+     } ,
+     {
+        "name": "Handi Biryani",
+        "img": "https://i.ibb.co/d2TYPGf/pexels-saveurs-secretes-7394819.jpg", 
+        "rating" : "4.9",
+        "price" : "120" , 
+        "description" : "Recipe NotesHandi may be made of metal or earthenware. It must be heatproof though. If not available use a deep, heavy saucepan.For a biryani with a stronger flavor, mix in some powdered mace, nutmeg into the rice before transferring to the handi.To save time, prepare handi a few hours ahead, and bake just before serving,"
+     }
 ]
