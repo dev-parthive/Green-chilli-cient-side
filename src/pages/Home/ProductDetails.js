@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 const ProductDetails = () => {
     const {id} = useParams()
     const [product , setProduct] = useState({})
@@ -26,7 +28,11 @@ const ProductDetails = () => {
         <div className='flex justify-center py-8'>
             <div className="card w-2/3 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
-          <img src={img} style={{width: '620px'}} alt="Shoes" className="rounded-xl" />
+         <PhotoProvider>
+            <PhotoView src={img}>
+            <img src={img} style={{width: '620px'}} alt="Shoes" className="rounded-xl" />
+            </PhotoView>
+         </PhotoProvider>
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title text-orange-500">{name}</h2>
