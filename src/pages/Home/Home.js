@@ -6,7 +6,7 @@ import ProductCard from './ProductCard';
 const Home = () => {
      const [products, setProducts] = useState([])
     useEffect(  ()=>{
-        fetch('services.json')
+        fetch('http://localhost:5000/service')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
