@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 const ServiceCard = ({product}) => {
+
     const {img, description, rating, price, name} = product  
     return (
         <div className="card w-96 bg-base-100 shadow-xl">

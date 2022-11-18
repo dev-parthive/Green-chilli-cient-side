@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img1 from '../../assests/images/pexels-igor-starkov-1307698.jpg'
+import GridGallery from './GridGallery';
 import './Home.css'
 import ProductCard from './ProductCard';
 const Home = () => {
@@ -32,6 +33,11 @@ const Home = () => {
                 </div>
               <Link to="/services"> <button className='btn btn-outline btn-success mt-7 px-9 text-center'>See All</button></Link>
             </div>
+                <div className='text-center'>
+                    <h2 className='text-5xl text-orange-600'>Take Look </h2>
+                    <p className='text-2xl'>What kind of dish we have</p>
+                </div>
+            <GridGallery></GridGallery>
           
         </div>
     );

@@ -1,0 +1,18 @@
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+.img-gallaery img{
+    width: 400px ;
+    height: 350px;
+    cursor: pointer;
+}
+.img-gallaery{
+    width:  80%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
