@@ -27,7 +27,7 @@ const Home = () => {
                 <h3 className='text-4xl text-orange-400'>Our Best Food's </h3>
                 <div  className='grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 w-full mx-auto'>
                 {
-                    products.map(product => <ProductCard product={product}></ProductCard>)
+                    products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)
                 }
                 </div>
               <Link to="/services"> <button className='btn btn-outline btn-success mt-7 px-9 text-center'>See All</button></Link>

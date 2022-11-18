@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const ServiceCard = ({product}) => {
-    const {img, description, rating, price, name} = product 
+    const {img, description, rating, price, name} = product  
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
@@ -18,6 +18,7 @@ const ServiceCard = ({product}) => {
           </div>
           <div className="card-actions">
           <Link to={`/service/${product._id}`}><button className="btn btn-primary" >Details</button></Link>
+          {/* <Link onClick={()=> handleDetails(product._id)}><button className="btn btn-primary" >Details</button></Link> */}
           </div>
         </div>
       </div>
