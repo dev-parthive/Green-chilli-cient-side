@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle, FaToiletPaperSlash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
     const {user, loading, createUser, googleSignIn  , githubSignIn } = useContext(AuthContext)
+    console.log(user)
 const hanleSignup = (event) =>{
     event.preventDefault()
     const form = event.target ;
@@ -59,7 +61,7 @@ const handleGithubSignIn = ()=>{
                 <p className='mb-2 mt-4'>Password</p>
                 <input name='password' type="password" placeholder="Password" className="mb-4 input input-bordered input-accent w-full max-w-xs" />
                 <div className='flex justify-center items-start'>
-                <button type="submit" className='btn btn-outline btn-success text-center'>Submit</button>
+                <button type="submit" className='btn btn-outline btn-success text-center'>Register</button>
                 </div>
             </form>
             <div className='text-center mt-4'>
@@ -71,6 +73,7 @@ const handleGithubSignIn = ()=>{
                     <div><FaGithub onClick={handleGithubSignIn} className='text-2xl cursor-pointer'></FaGithub></div>
                 </div>
             </div>
+            <h2 className='mt-4 text-center' >Already have and account ? <Link to="/login" className='underline text-orange-500'>Login</Link></h2>
         <ToastContainer/>
         </div>
     );

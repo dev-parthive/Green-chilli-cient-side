@@ -4,6 +4,7 @@ import Blog from "../../pages/Blog/Blog";
 import Error from "../../pages/Error/Error";
 import Home from "../../pages/Home/Home";
 import ProductDetails from "../../pages/Home/ProductDetails";
+import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import Services from "../../pages/Services/Services";
 
@@ -41,6 +42,10 @@ const routes = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            } , 
+            {
+                path: "/login", 
+                element: <Login></Login>
             }
            
         ]
