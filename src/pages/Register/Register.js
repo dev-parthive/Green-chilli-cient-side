@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle, FaToiletPaperSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
+    const location = useLocation()
+    let from = location?.state?.pathname || "/" ;
+    const navigate= useNavigate()
     const {user, loading, createUser, googleSignIn  , githubSignIn } = useContext(AuthContext)
     console.log(user)
 const hanleSignup = (event) =>{
@@ -20,8 +23,8 @@ const hanleSignup = (event) =>{
         const user = result.user;
         console.log(user)
         toast.success("user created")
-        form.reset()
-
+        form.reset() 
+        navigate( from, {replace: true})
     } )
     .catch(err =>{
         const message = err.message;
@@ -34,6 +37,7 @@ const handleGoogleSignIn = ()=>{
         const user = result.user ;
         console.log(user)
         toast.success("user created")
+        navigate( from, {replace: true})
     }) 
     .catch(err =>{
         const message = err.message;
@@ -46,6 +50,7 @@ const handleGithubSignIn = ()=>{
         const  user = result.user;
         console.log(user)
         toast.success("user created succesfully")
+        navigate( from, {replace: true})
     })
 }
    

@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
+let from = location.state.pathname || "/" ; 
     const {user, loading,  googleSignIn  , githubSignIn, signIn } = useContext(AuthContext)
 
 
@@ -20,6 +23,7 @@ const Login = () => {
             console.log(user)
             form.reset()
             toast.success("user loggedIn Successfully")
+            navigate(from, {replace: true})
         })
         .catch(err =>{
             const message = err.message
@@ -33,6 +37,7 @@ const Login = () => {
         .then(result => {
             const user = result.user ;
             toast.success("user created")
+            navigate(from, {replace: true})
         })
         .catch(err =>{
             const message = err.message
@@ -48,6 +53,7 @@ const Login = () => {
             const user = result.user
             console.log(user)
             toast.success("User created Successfully")
+            navigate(from, {replace: true})
 
         })
         .catch(err =>{
