@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../Context/AuthProvider';
 import './Header.css'
 const Header = () => {
+  const {user , logOut} = useContext(AuthContext)
+  console.log(user)
+  const handleLogOut = ()=>{
+    logOut()
+    .then( ()=> {
+      toast.success("LogedOut Successfully")
+    } )
+    .catch(err =>{
+      const message = err.message;
+      toast.error(`${message}`)
+    })
+  }
+
     const menuItems = <>
         <li className='font-semibold'><Link to="/">Home</Link></li>
         <li className='font-semibold'><Link to="/blog">Blog</Link></li>
-        <li className='font-semibold'><Link to="/register">Register</Link></li>
-        <li className='font-semibold'><Link to="/login">Login</Link></li>
+       {
+        user?.email ?
+        
+        <>
+        <li className='font-semibold'><Link to="/">My Reviews</Link></li>
+        <li className='font-semibold'><Link to="/blog">Add Service</Link></li>
+         </>
+        
+        :
+        <> <li className='font-semibold'><Link to="/register">Register</Link></li>
+        <li className='font-semibold'><Link to="/login">Login</Link></li></>
+
+     
+       }
         
         </>
     return (
@@ -28,7 +55,16 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a href='d' className="btn"> user</a>
+        {
+          user?.email ?   <><a  className="">{user.photoURL ? <><img src={user.photoURL} className="rounded-2xl w-8" alt="img" /></>
+        :
+        <><small>{user?.email}</small></>
+        }</a> 
+          <button onClick={handleLogOut} className='btn btn-outline btn-success ml-2'>Log Out</button></>
+          : 
+          <>
+          </>
+        }
         </div>
       </div>
     );
