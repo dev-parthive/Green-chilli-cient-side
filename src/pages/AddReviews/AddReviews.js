@@ -22,7 +22,7 @@ const AddReviews = () => {
         }
         
         console.log(review)
-        fetch("http://localhost:5000/addReview", {
+        fetch("https://pathabo-server-dev-parthive.vercel.app/addReview", {
             method: "POST", 
             headers: {
                 "content-type" : "application/json"

@@ -10,7 +10,7 @@ const Edit = () => {
     const [review, setReview] = useState({})
     console.log(id)
     useEffect( ()=>{
-        fetch(`http://localhost:5000/edit-review/${id}`)
+        fetch(`http:/localhost:5000/edit-review/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -30,7 +30,7 @@ const Edit = () => {
         }
         // console.log(review)
         //akn kaj holo edit kora review k db te patano
-        fetch(`http://localhost:5000/edit-review/${id}`, {
+        fetch(`https://pathabo-server-dev-parthive.vercel.app/edit-review/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type" : "application/json"

@@ -15,7 +15,7 @@ const ProductDetails = () => {
     // setProduct(product.name)
     // console.log(productName)
     useEffect( ()=>{
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://pathabo-server-dev-parthive.vercel.app/product/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data.product)

@@ -3,6 +3,7 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTittle';
 
 const Login = () => {
     const location = useLocation()
@@ -10,7 +11,7 @@ const Login = () => {
 let from = location?.state?.pathname || "/" ; 
     const {user, loading,  googleSignIn  , githubSignIn, signIn } = useContext(AuthContext)
 
-
+    useTitle('Login')
     const handleSignIn = (event)=>{
         event.preventDefault()
         const form = event.target;

@@ -7,7 +7,7 @@ const ShowReview = ({id}) => {
     const [refresh, setRefresh] = useState(false)
     console.log(id)
     useEffect(()=>{
-        fetch(`http://localhost:5000/addReview/${id}`)
+        fetch(`https://pathabo-server-dev-parthive.vercel.app/addReview/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)

@@ -38,7 +38,7 @@ const routes = createBrowserRouter([
                 path: "/services", 
                 element: <Services></Services> ,
                 loader: ()=>{
-                    return fetch('http://localhost:5000/services')
+                    return fetch('https://pathabo-server-dev-parthive.vercel.app/services')
                 } 
             } ,{
                 path: "/service/:id",

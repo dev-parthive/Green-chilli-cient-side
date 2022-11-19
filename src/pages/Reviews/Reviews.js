@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTittle';
 import EditReviewCard from './EditReviewCard';
 
 const Reviews = () => {
     const {user, refresh, setRefresh} = useContext(AuthContext)
-
+    useTitle('Reviews')
     console.log(user)
     const [reviews, setReviews]  = useState({})
     useEffect( ()=>{
-         fetch(`http://localhost:5000/review/${user?.email}`)
+         fetch(`https://pathabo-server-dev-parthive.vercel.app/review/${user?.email}`)
         .then(res => res.json())
         .then(data =>{
             console.log(data)
@@ -21,7 +22,7 @@ const Reviews = () => {
     return (
       <div>
         {
-            reviews?.length <0  ? <><h2 className='text-2xl text-center text-orange-600'>You don't have any review</h2></>  : <></>
+            reviews?.length || <><h2 className='text-2xl text-center text-orange-600'>You don't have any review</h2></> 
         } 
        <div className='mb-10 grid grid-cols-1  md:grid-cols-2 gap-10 lg:grid-cols-3'>
        {

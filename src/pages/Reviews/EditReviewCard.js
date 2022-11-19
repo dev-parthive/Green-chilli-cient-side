@@ -20,7 +20,7 @@ const handleEdit =(id)=>{
 
 //handleDelete
 const handleDelete= (id) =>{
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://pathabo-server-dev-parthive.vercel.app/delete/${id}`, {
         method: "DELETE",
     })
     .then( res => res.json())

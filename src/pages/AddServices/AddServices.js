@@ -1,7 +1,9 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTittle';
 
 const AddServices = () => {
+    useTitle('Add-Services')
     const handleSubmit =(e) =>{
         e.preventDefault()
         const service = {
@@ -12,7 +14,7 @@ const AddServices = () => {
             img: e.target.img.value,
         }
         console.log(service)
-        fetch(`http://localhost:5000/add-service`, {
+        fetch(`https://pathabo-server-dev-parthive.vercel.app/add-service`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
