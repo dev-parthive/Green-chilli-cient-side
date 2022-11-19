@@ -1,17 +1,40 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEdit, FaStar, FaTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import profile from '../../assests/images/profile-picture-5.jpg'
+import { AuthContext } from '../../Context/AuthProvider';
 
 const EditReviewCard = ({review}) => {
     const{img, email, message, rating, name, _id } = review
     // console.log(img, email, message, rating, name)
     const navigate = useNavigate()
+    // const [refresh, setRefresh] = useState(false)
+    const {refresh, setRefresh} = useContext(AuthContext)
     
     //handleEdit
 const handleEdit =(id)=>{
     console.log('button is clicked ', id)
     navigate(`/edit-review/${id}`)
+}
+
+//handleDelete
+const handleDelete= (id) =>{
+    fetch(`http://localhost:5000/delete/${id}`, {
+        method: "DELETE",
+    })
+    .then( res => res.json())
+    .then(data =>{
+        console.log(data)
+        if(data.success){
+            toast.success(`${data.message}`)
+            setRefresh(!refresh)
+        }
+        else{
+            toast.error(`${data.error}`)
+        }
+    })
+    .catch(err => toast.error(`${err.message}`))
 }
 
     return (
@@ -32,7 +55,7 @@ const handleEdit =(id)=>{
       </div>
       <div className='flex justify-center mt-3 text-3xl text-sky-600 items-center'>
         <div className='mr-4 tooltip' data-tip="Edit"><FaEdit  onClick={()=>handleEdit(_id)}className='cursor-pointer'></FaEdit></div>
-        <div  className='tooltip' data-tip="Delete"><FaTrashAlt className='cursor-pointer ' ></FaTrashAlt></div>
+        <div  className='tooltip' data-tip="Delete"><FaTrashAlt className='cursor-pointer ' onClick={()=> handleDelete(_id)}></FaTrashAlt ></div>
       </div>
         
        </div>

@@ -3,7 +3,8 @@ import { AuthContext } from '../../Context/AuthProvider';
 import EditReviewCard from './EditReviewCard';
 
 const Reviews = () => {
-    const {user} = useContext(AuthContext)
+    const {user, refresh, setRefresh} = useContext(AuthContext)
+
     console.log(user)
     const [reviews, setReviews]  = useState({})
     useEffect( ()=>{
@@ -12,8 +13,9 @@ const Reviews = () => {
         .then(data =>{
             console.log(data)
             setReviews(data.data)
+            setRefresh(!refresh)
         })
-    }, [user?.email])
+    }, [user?.email , refresh])
     console.log(reviews)
 
     return (

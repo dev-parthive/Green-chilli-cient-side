@@ -12,7 +12,7 @@ const AuthProvider = ({children}) => {
     const [user ,setUser ]  = useState(null)
     const [loading, setLoading] = useState(true);
 
-    
+    const [refresh, setRefresh] = useState(false)
 
     //create user using eamil and password
     const createUser = (email ,  password) =>{
@@ -58,7 +58,7 @@ useEffect( ()=>{
 
 
     const authInfo = {
-     user, loading, createUser , googleSignIn, githubSignIn , signIn , logOut , 
+     user, loading, createUser , googleSignIn, githubSignIn , signIn , logOut , refresh, setRefresh
     }
     return (
         <AuthContext.Provider value={authInfo}>
