@@ -7,15 +7,19 @@ const AddReviews = () => {
     const {id} = useParams()
     console.log(id)
     const {user} = useContext(AuthContext)
+    console.log(user?.photoURL)
     const handleSubmit = (event) =>{
         event.preventDefault()
+        const form = event.target
         const review = {
             name: event.target.name.value,
             email: event.target.email.value,
             rating: event.target.rating.value,
             message: event.target.message.value, 
             product_id : id,
+            img: user.photoURL,   
         }
+        
         console.log(review)
         fetch("http://localhost:5000/addReview", {
             method: "POST", 
@@ -29,6 +33,7 @@ const AddReviews = () => {
             console.log(data)
             if(data.success){
                 toast.success(`${data.message}`)
+                form.reset()
 
             }else{
                 toast.error(`${data.error}`)

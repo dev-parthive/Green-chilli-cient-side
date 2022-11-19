@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import Review from '../AddReviews/Review';
+import ShowReview from '../AddReviews/ShowReview';
 const ProductDetails = () => {
     const {id} = useParams()
     const [product , setProduct] = useState({})
@@ -49,6 +50,8 @@ const ProductDetails = () => {
         </div>
 
         <Review id={product._id}></Review>
+        <ShowReview  id={product._id}></ShowReview>        
+
        </div>
     );
 };
