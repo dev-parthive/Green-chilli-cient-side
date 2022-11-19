@@ -28,8 +28,8 @@ const ShowReview = ({id}) => {
                 reveiws?.length &&  reveiws.map( review => <SingleReview key={review._id} review={review}></SingleReview>)
             }
             {
-                reveiws?.length < 0 ?  <><h2 className='text-center text-orange-600 text-2xl'>No Review yet for this product</h2></> 
-                : <></>
+              reveiws?.length <=0 ? <div><h2 className='text-center text-orange-600 text-2xl'>There no review to show </h2></div> : 
+              <div> </div>
             }
           </div>
         </div>

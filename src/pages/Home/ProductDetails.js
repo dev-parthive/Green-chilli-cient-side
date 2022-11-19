@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,10 +6,14 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import Review from '../AddReviews/Review';
 import ShowReview from '../AddReviews/ShowReview';
+import { AuthContext } from '../../Context/AuthProvider';
 const ProductDetails = () => {
     const {id} = useParams()
     const [product , setProduct] = useState({})
     const [refresh, setRefresh] = useState(false)
+    const {productName, setProductName} = useContext(AuthContext)
+    // setProduct(product.name)
+    // console.log(productName)
     useEffect( ()=>{
         fetch(`http://localhost:5000/product/${id}`)
         .then(res => res.json())
@@ -49,7 +53,7 @@ const ProductDetails = () => {
 
         </div>
 
-        <Review id={product._id}></Review>
+        <Review name={product.name} id={product._id}></Review>
         <ShowReview  id={product._id}></ShowReview>        
 
        </div>

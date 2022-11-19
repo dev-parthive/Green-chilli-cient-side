@@ -7,6 +7,7 @@ const AddReviews = () => {
     const {id} = useParams()
     console.log(id)
     const {user} = useContext(AuthContext)
+
     console.log(user?.photoURL)
     const handleSubmit = (event) =>{
         event.preventDefault()

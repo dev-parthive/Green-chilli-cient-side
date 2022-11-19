@@ -8,6 +8,7 @@ import Home from "../../pages/Home/Home";
 import ProductDetails from "../../pages/Home/ProductDetails";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
+import Edit from "../../pages/Reviews/Edit";
 import Reviews from "../../pages/Reviews/Reviews";
 import Services from "../../pages/Services/Services";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
@@ -62,6 +63,11 @@ const routes = createBrowserRouter([
             {
                 path: '/add-review/:id', 
                 element: <AddReviews></AddReviews>
+            }, 
+            {
+                path: '/edit-review/:id',
+                element: <Edit></Edit>
+
             }
            
         ]

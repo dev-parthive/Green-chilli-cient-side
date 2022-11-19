@@ -11,6 +11,7 @@ const AuthProvider = ({children}) => {
     
     const [user ,setUser ]  = useState(null)
     const [loading, setLoading] = useState(true);
+
     
 
     //create user using eamil and password
@@ -57,7 +58,7 @@ useEffect( ()=>{
 
 
     const authInfo = {
-     user, loading, createUser , googleSignIn, githubSignIn , signIn , logOut
+     user, loading, createUser , googleSignIn, githubSignIn , signIn , logOut , 
     }
     return (
         <AuthContext.Provider value={authInfo}>
