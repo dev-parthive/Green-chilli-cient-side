@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import Review from '../AddReviews/Review';
 const ProductDetails = () => {
     const {id} = useParams()
     const [product , setProduct] = useState({})
@@ -25,7 +26,8 @@ const ProductDetails = () => {
     console.log(product)
 
     return (
-        <div className='flex justify-center py-8'>
+       <div>
+         <div className='flex justify-center py-8'>
             <div className="card w-2/3 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
          <PhotoProvider>
@@ -45,6 +47,9 @@ const ProductDetails = () => {
       </div>
 
         </div>
+
+        <Review id={product._id}></Review>
+       </div>
     );
 };
 
