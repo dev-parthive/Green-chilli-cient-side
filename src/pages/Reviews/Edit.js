@@ -10,7 +10,7 @@ const Edit = () => {
     const [review, setReview] = useState({})
     console.log(id)
     useEffect( ()=>{
-        fetch(`http:/localhost:5000/edit-review/${id}`)
+        fetch(`https://pathabo-server-dev-parthive.vercel.app/edit-review/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -18,6 +18,7 @@ const Edit = () => {
         })
     }, [id, refresh])
     const {name, email , rating, message} = review
+    console.log(review)
     // console.log(name, email , rating, message)
     console.log(review)
     const handleSubmit = async(e)=>{
